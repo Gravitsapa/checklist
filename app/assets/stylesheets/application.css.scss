@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize";
+
+
+.field_with_errors textarea {
+	border-bottom: 2px solid red;
+}

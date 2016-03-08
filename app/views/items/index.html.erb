@@ -1,0 +1,5 @@
+
+<% @items.each do |item| %>
+	<h3><%= link_to item.title, item_path(item) %></h3>
+	<p><%= item.description %></p>
+<% end %>
