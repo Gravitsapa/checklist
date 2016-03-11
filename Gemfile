@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'materialize-sass', '~> 0.97.5'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 3.5', '>= 3.5.6'
-gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'slim', '~> 3.0', '>= 3.0.6'
 
 group :development, :test do
   gem 'byebug'
