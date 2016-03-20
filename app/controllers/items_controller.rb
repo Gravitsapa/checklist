@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
-	before_action :find_item, only: [:show, :edit, :update, :destroy]
+	before_action :find_item, only: [:show, :edit, :update, :destroy, :complete]
 	before_action :authenticate_user!, except: [:show, :index]
 
 	def index
-		@items = Item.all
+		@items = Item.all.order('created_at DESC')
 	end
 
 	def show
@@ -36,6 +36,11 @@ class ItemsController < ApplicationController
 
 	def destroy
 		@item.destroy
+		redirect_to items_path
+	end
+
+	def complete
+		@item.update_attribute(:completed, Time.now)
 		redirect_to items_path
 	end
 

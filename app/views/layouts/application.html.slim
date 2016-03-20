@@ -11,24 +11,31 @@ html
         = link_to 'Checklist', root_path, class: 'brand-logo'
         ul#nav-mobile.right.hide-on-med-and-down
           - if user_signed_in?
-            li(class='dropdown-button' data-activates='user-dropdown') 
-              = link_to current_user.email, '#'
+            li(class='dropdown-button bold-text' data-activates='user-dropdown')
+              = link_to(current_user.email, '#')
             ul.dropdown-content#user-dropdown
-              li= link_to current_user.email, root_path
+              li= link_to 'New item', new_item_path
               li= link_to 'sign out', destroy_user_session_path, method: :delete
           - else
             li= link_to 'Sign up', new_user_registration_path
             li= link_to 'Sign in', new_user_session_path
     main
       .container
-        - if notice
-          javascript:
-            window.onload = function() {Materialize.toast("#{notice}", 6000);};
-        - if alert
-          javascript:
-            window.onload = function() {Materialize.toast("#{alert}", 6000);};
-        
-        =yield
+        .row
+          .col.s12.m10.offset-m1.l8.offset-l2
+            - if notice
+              javascript:
+                window.onload = function() {Materialize.toast("#{notice}", 6000);};
+            - if alert
+              javascript:
+                window.onload = function() {Materialize.toast("#{alert}", 6000);};
+            
+            =yield
       - if user_signed_in?
         div class='fixed-action-btn' style='bottom: 45px; right: 24px;'
           = link_to fa_icon('plus'), new_item_path, class: 'btn-floating btn-large red'
+    footer.page-footer.indigo
+      .footer-copyright
+        .container 
+          | © #{Time.now.year} Andrey Liapin
+          = link_to 'More links', '#!', class: 'grey-text text-lighten-4 right'

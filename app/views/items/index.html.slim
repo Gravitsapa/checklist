@@ -1,4 +1,13 @@
 
 - @items.each do |item|
-	h3= link_to item.title, item_path(item)
-	p= item.description
+	.card-panel.white.item
+		.row.valign-wrapper
+			.col.s9
+					h3 class="#{'completed-strike' if item.completed?}"
+						= link_to item.title, item_path(item)
+					p class="#{'completed' if item.completed?}"
+						= item.description
+			.col.s3.valgn-wrapper
+				.valign.right-align
+					= link_to fa_icon('check lg', style: 'margin-right: 1.5rem;'), complete_item_path(item), method: :patch
+					= link_to fa_icon('trash lg'), item_path(item), method: :delete, comfirm: {data: "Are you shure?"}

@@ -2,6 +2,7 @@ h4= @item.title
 p= @item.description
 
 = link_to 'Back', items_path
-= link_to 'Edit', edit_item_path(@item)
-= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}
+- if user_signed_in?
+	= link_to 'Edit', edit_item_path(@item)
+	= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}
 
