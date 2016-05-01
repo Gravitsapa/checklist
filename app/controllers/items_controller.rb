@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
 	before_action :authenticate_user!, except: [:show, :index]
 
 	def index
-		@items = Item.all.order('created_at DESC')
+		if current_user
+			@items = current_user.items.order('created_at DESC')
+		end
 	end
 
 	def show

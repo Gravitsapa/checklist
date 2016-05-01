@@ -16,6 +16,8 @@
 @import "materialize";
 @import "font-awesome";
 
+$base-color: #1565c0;
+
 
 .field_with_errors textarea {
 	border-bottom: 2px solid red;
@@ -62,7 +64,7 @@ input[type="tel"]:focus:not([readonly]),
 input[type="number"]:focus:not([readonly]), 
 input[type="search"]:focus:not([readonly]), 
 textarea.materialize-textarea:focus:not([readonly]) {
-	border-bottom: 1px solid #1565c0;
+	border-bottom: 1px solid $base-color;
 }
 
 .item > .row {
@@ -76,4 +78,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .completed-strike {
 	@extend .completed;
 	text-decoration: line-through;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+	color: $base-color;
 }
