@@ -16,6 +16,7 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 gem 'rails_12factor', '~> 0.0.3'
+gem 'heroku', '~> 3.43', '>= 3.43.5'
 
 group :development, :test do
   gem 'byebug'
