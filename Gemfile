@@ -15,6 +15,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
+gem 'rails_12factor', '~> 0.0.3'
 
 group :development, :test do
   gem 'byebug'
